@@ -1,6 +1,6 @@
 {
-  "name": "folder-hash",
-  "version": "3.3.0",
+  "name": "folder-hash-sequence",
+  "version": "1.0.0",
   "description": "Create a hash checksum over a folder and its content - its children and their content",
   "main": "index.js",
   "bin": {
@@ -13,13 +13,13 @@
     "doc": "./node_modules/.bin/jsdoc index.js -R README.md -d doc"
   },
   "author": {
-    "name": "Marc Walter",
-    "email": "walter.marc@outlook.com"
+    "name": "Farhan Tariq",
+    "email": "farhantariq@outlook.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marc136/node-folder-hash.git"
+    "url": "https://github.com/farhantariq92/folder-hash-sequence.git"
   },
   "nyc": {
     "reporter": [
