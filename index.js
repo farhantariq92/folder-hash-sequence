@@ -164,6 +164,11 @@ function prep(fs, Promise) {
                 f.pipe(hash, { end: false });
 
                 f.on('end', () => {
+                    // const hashedFile = new HashedFile(name, hash, options.encoding);
+                    // return resolve(hashedFile);
+                });
+
+                f.on('close', () => {
                     const hashedFile = new HashedFile(name, hash, options.encoding);
                     return resolve(hashedFile);
                 });
@@ -210,11 +215,18 @@ function prep(fs, Promise) {
         } else {
             hash.write(name);
         }
-        children.forEach(child => {
+
+        for (let child of children) {
             if (child.hash) {
                 hash.write(child.hash);
             }
-        });
+        }
+
+        // children.forEach(child => {
+        //     if (child.hash) {
+        //         hash.write(child.hash);
+        //     }
+        // });
 
         this.hash = hash.digest(options.encoding);
     };
